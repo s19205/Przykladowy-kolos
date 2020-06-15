@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Przykladowy_kolos.Models;
+using Przykladowy_kolos.Services;
 
 namespace Przykladowy_kolos
 {
@@ -24,6 +26,8 @@ namespace Przykladowy_kolos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<s19205Context, s19205Context>();
+            services.AddScoped<IOrderDbService, SqlServerOrderDbService>();
             services.AddControllers();
         }
 
